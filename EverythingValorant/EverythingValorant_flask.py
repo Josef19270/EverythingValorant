@@ -4,7 +4,7 @@ import sqlite3
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = b'husaiflh'
 DATABASE = 'everythingvalorant.db'
 
 def get_db():
@@ -20,9 +20,13 @@ def close_connection(exception):
         db.close()
 
 @app.route("/")
-def index():
+def home():
+    return render_template("homepage.html")
+
+@app.route("/agents")
+def agents():
     cursor = get_db().cursor()
-    sql = "SELECT * FROM b"
+    sql = "SELECT * FROM agents"
     cursor.execute(sql)
     results = cursor.fetchall()
     return render_template("agents.html", results=results,)

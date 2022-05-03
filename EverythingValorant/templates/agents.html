@@ -8,7 +8,11 @@
     <title>Agents</title>
 </head>
 <body>
-    <table>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="/agents">Agents</a>
+    </div>
+    <table class="right">
         <tr>
             <th>Agent Number</th>
             <th>Agent Name</th>
@@ -18,11 +22,11 @@
         </tr>
         {% for item in results %}
         <tr>
+          <td>{{  item[0]  }}</td>
           <td>{{  item[1]  }}</td>
           <td>{{  item[2]  }}</td>
           <td>{{  item[3]  }}</td>
           <td>{{  item[4]  }}</td>
-          <td>{{  item[5]  }}</td>
         </tr>
         {% endfor %}
       </table>
