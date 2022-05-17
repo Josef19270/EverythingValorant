@@ -31,5 +31,13 @@ def agents():
     results = cursor.fetchall()
     return render_template("agents.html", results=results,)
 
+@app.route("/abilities")
+def abilities():
+    cursor = get_db().cursor()
+    sql = "SELECT * FROM abilities"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template("abilities.html", results=results,)
+
 if __name__ == "__main__":
     app.run(debug=True)

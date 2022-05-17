@@ -5,21 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={{url_for ("static", filename = "styles/styles.css")}}>
-    <title>Agents</title>
+    <title>Abilities</title>
 </head>
 <body>
     <div class="topnav">
-      <a class="active" href="/">Home</a>
-      <a href="/agents">Agents</a>
-      <a href="/abilities">Abilities</a>
+     <a class="active" href="/">Home</a>
+     <a href="/agents">Agents</a>
+     <a href="/abilities">Abilities</a>
     </div>
     <table class="right">
         <tr>
-            <th>Agent Number</th>
-            <th>Agent Name</th>
-            <th>Origin</th>
-            <th>Type</th>
-            <th>Role</th>
+            <th>ability_id</th>
+            <th>Ability Name</th>
+            <th>Ability Type</th>
+            <th>Function</th>
+            <th>Agent</th>
+            <th>Max Charges</th>
+            <th>Cost*</th>
         </tr>
         {% for item in results %}
         <tr>
@@ -28,8 +30,13 @@
           <td>{{  item[2]  }}</td>
           <td>{{  item[3]  }}</td>
           <td>{{  item[4]  }}</td>
+          <td>{{  item[5]  }}</td>
+          <td>{{  item[6]  }}</td>
         </tr>
         {% endfor %}
       </table>
+      <div class="a">
+      <p>*Cost of ultimate abilities is not measured in credits, but ult points.</p>
+      </div>
 </body>
 </html>
