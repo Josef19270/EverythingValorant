@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={{url_for ("static", filename = "styles/styles.css")}}>
-    <title>Agents</title>
+    <title>Ultimate Abilities</title>
 </head>
 <body>
     <div class="topnav">
-      <a class="active" href="/">Home</a>
-      <a href="/agents">Agents</a>
-      <a href="/signatures">Signature Abilities</a>
-      <a href="/basic">Basic Abilities</a>
+     <a class="active" href="/">Home</a>
+     <a href="/agents">Agents</a>
+     <a href="/signatures">Signature Abilities</a>
+     <a href="/basic">Basic Abilities</a>
+     <a href="/ultimate">Ultimate Abilities</a>
     </div>
     <table class="right">
         <tr>
-            <th>Agent Number</th>
-            <th>Agent Name</th>
-            <th>Origin</th>
-            <th>Type</th>
-            <th>Role</th>
+            <th>Ability Name</th>
+            <th>Function</th>
+            <th>Agent</th>
+            <th>Ult Points</th>
         </tr>
         {% for item in results %}
         <tr>
@@ -28,7 +28,6 @@
           <td>{{  item[1]  }}</td>
           <td>{{  item[2]  }}</td>
           <td>{{  item[3]  }}</td>
-          <td>{{  item[4]  }}</td>
         </tr>
         {% endfor %}
       </table>

@@ -31,13 +31,29 @@ def agents():
     results = cursor.fetchall()
     return render_template("agents.html", results=results,)
 
-@app.route("/abilities")
-def abilities():
+@app.route("/signatures")
+def signatures():
     cursor = get_db().cursor()
-    sql = "SELECT * FROM abilities"
+    sql = "SELECT e.ability_name, e.ability_function, agents.agent_name, e.max_charges, e.cost, e.recharge_time FROM signature_ability_e e JOIN agents ON e.agent_number = agents.agent_number"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return render_template("abilities.html", results=results,)
+    return render_template("signatures.html", results=results,)
+
+@app.route("/basic")
+def basic():
+    cursor = get_db().cursor()
+    sql = "SELECT * FROM basic_ability_c"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template("basic.html", results=results)
+
+@app.route("/ultimate")
+def ultimate():
+    cursor = get_db().cursor()
+    sql = "SELECT x.ability_name, x.ability_function, agents.agent_name, x.ult_points FROM ultimate_ability_x x JOIN agents ON x.agent_number = agents.agent_number"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template("ultimates.html", results=results,)
 
 if __name__ == "__main__":
     app.run(debug=True)
