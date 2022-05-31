@@ -42,7 +42,7 @@ def signatures():
 @app.route("/basic")
 def basic():
     cursor = get_db().cursor()
-    sql = "SELECT * FROM basic_ability_c"
+    sql = "SELECT c.ability_name, c.ability_function, agents.agent_name, c.max_charges, c.cost FROM basic_ability_c c JOIN agents ON c.agent_number = agents.agent_number"
     cursor.execute(sql)
     results = cursor.fetchall()
     return render_template("basic.html", results=results)

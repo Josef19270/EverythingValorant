@@ -60,7 +60,7 @@ div.a {
 .split {
   height: 100%;
   width: 50%;
-  /* position: fixed; */
+  position: fixed;
   z-index: 2;
   top: auto;
   overflow-x: hidden;
