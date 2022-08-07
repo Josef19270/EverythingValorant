@@ -21,14 +21,18 @@
     <div class = "split left">
       <table class="right">
         <tr>
+            <th>Icon</th>
             <th>Ability Name</th>
             <th>Function</th>
             <th>Agent</th>
             <th>Max Charges</th>
             <th>Cost</th>
         </tr>
-        {% for item in results_q %}
+        {% for item in results_c %}
         <tr>
+          <td>
+            <img src="{{ url_for('static', filename='images/ability icons/basic/c/' + item[5])}}">
+          </td>
           <td>{{  item[0]  }}</td>
           <td>{{  item[1]  }}</td>
           <td>{{  item[2]  }}</td>
@@ -42,14 +46,18 @@
     <div class = "split right">
       <table class="right">
           <tr>
+              <th>Icon</th>
               <th>Ability Name</th>
               <th>Function</th>
               <th>Agent</th>
               <th>Max Charges</th>
               <th>Cost</th>
           </tr>
-          {% for item in results_c %}
+          {% for item in results_q %}
           <tr>
+            <td>
+              <img src="{{ url_for('static', filename='images/ability icons/basic/q/' + item[5])}}">
+            </td>
             <td>{{  item[0]  }}</td>
             <td>{{  item[1]  }}</td>
             <td>{{  item[2]  }}</td>
