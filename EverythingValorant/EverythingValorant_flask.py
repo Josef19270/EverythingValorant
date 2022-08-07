@@ -45,10 +45,10 @@ def signatures():
 @app.route("/basic")
 def basic():
     cursor = get_db().cursor()
-    sql = "SELECT c.ability_name, c.ability_function, agents.agent_name, c.max_charges, c.cost FROM basic_ability_c c JOIN agents ON c.agent_number = agents.agent_number"
+    sql = "SELECT c.ability_name, c.ability_function, agents.agent_name, c.max_charges, c.cost, c.image_filename FROM basic_ability_c c JOIN agents ON c.agent_number = agents.agent_number"
     cursor.execute(sql)
     results_c = cursor.fetchall()
-    sql = "SELECT q.ability_name, q.ability_function, agents.agent_name, q.max_charges, q.cost, agents.agent_name FROM basic_ability_q q JOIN agents ON q.agent_number = agents.agent_number"
+    sql = "SELECT q.ability_name, q.ability_function, agents.agent_name, q.max_charges, q.cost, q.image_filename FROM basic_ability_q q JOIN agents ON q.agent_number = agents.agent_number"
     cursor.execute(sql)
     results_q = cursor.fetchall()
     return render_template("basic.html", results_c=results_c, results_q=results_q)
@@ -56,7 +56,7 @@ def basic():
 @app.route("/ultimate")
 def ultimate():
     cursor = get_db().cursor()
-    sql = "SELECT x.ability_name, x.ability_function, agents.agent_name, x.ult_points FROM ultimate_ability_x x JOIN agents ON x.agent_number = agents.agent_number"
+    sql = "SELECT x.ability_name, x.ability_function, agents.agent_name, x.ult_points, x.image_filename FROM ultimate_ability_x x JOIN agents ON x.agent_number = agents.agent_number"
     cursor.execute(sql)
     results = cursor.fetchall()
     return render_template("ultimates.html", results=results,)
