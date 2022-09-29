@@ -16,25 +16,30 @@
       <a class="active" href="/ultimate">Ultimate Abilities</a>
       <a href="/login">Login</a>
     </div>
-    <table class="right">
-        <tr>
-            <th>Icon</th>
-            <th>Ability Name</th>
-            <th>Function</th>
-            <th>Agent</th>
-            <th>Ult Points</th>
-        </tr>
-        {% for item in results %}
-        <tr>
-          <td>
-            <img src="{{ url_for('static', filename='images/ability icons/ultimate/' + item[4])}}">
-          </td>
-          <td>{{  item[0]  }}</td>
-          <td>{{  item[1]  }}</td>
-          <td>{{  item[2]  }}</td>
-          <td>{{  item[3]  }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+    <div class = "split left">
+      <p></p>
+    </div>
+    <div class = "row">
+      <table class= "right">
+         <tr>
+             <th>Icon</th>
+             <th>Ability Name</th>
+             <th>Function</th>
+             <th>Agent</th>
+             <th>Ult Points</th>
+         </tr>
+         {% for item in results %}
+         <tr>
+           <td>
+             <img src="{{ url_for('static', filename='images/ability icons/ultimate/' + item[4])}}">
+           </td>
+           <td>{{  item[0]  }}</td>
+           <td>{{  item[1]  }}</td>
+           <td>{{  item[2]  }}</td>
+           <td>{{  item[3]  }}</td>
+          </tr>
+          {% endfor %}
+       </table>
+      </div>
 </body>
 </html>
