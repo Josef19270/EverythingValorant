@@ -10,11 +10,13 @@
 <body>
     <div class="topnav">
       <a href="/">Home</a>
-      <a class="active" href="/agents">Agents</a>
+      <a class=active href="/agents">Agents</a>
       <a href="/signatures">Signature Abilities</a>
       <a href="/basic">Basic Abilities</a>
-      <a href="/ultimate">Ultimate Abilities</a> 
-      <a href="/login">Login</a>
+      <a href="/ultimate">Ultimate Abilities</a>
+      <a href="/posts">Posts</a>
+      <a href="/create">Create Post</a>
+      <a href="/admin">Admin</a>
     </div>
     <div class = "split left">
       <p>Agents are the playable characters in VALORANT, representing an agent of the VALORANT Protocol. Each agent serves as a different class with four abilities and are mostly unlocked by progressing through their Contract.
@@ -27,6 +29,7 @@
         <p>Initiator agents challenge angles by setting up their team to enter contested ground and push defenders away.</p>
         <p>Sentinel agents are defensive experts who can lock down areas and watch flanks, both on attacker and defender rounds.
       </p>
+      <a href="/info/Brimstone"> Viper</a>
     </div>
     <div class = "split right">
       <table class="center">
@@ -44,7 +47,7 @@
               <img src="{{ url_for('static', filename='images/agent icons/' +  item[5])}}">
             </td>
             <td>{{  item[0]  }}</td>
-            <td>{{  item[1]  }}</td>
+            <td><a href="/info/{{  item[1]  }}">{{  item[1]  }}</a></td>
             <td>{{  item[2]  }}</td> 
             <td>{{  item[3]  }}</td>
             <td>{{  item[4]  }}</td>

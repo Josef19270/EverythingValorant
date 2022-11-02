@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for ("static", filename = "styles/styles.css")}}>
+    <title>New Post</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/agents">Agents</a>
+        <a href="/signatures">Signature Abilities</a>
+        <a href="/basic">Basic Abilities</a>
+        <a href="/ultimate">Ultimate Abilities</a>
+        <a href="/posts">Posts</a>
+        <a class=active href="/create">Create Post</a>
+        <a href="/admin">Admin</a>
+    </div>
+    <!--  -->
+    <form action="/create" method="post">
+        <h2>Make your mark!</h2>
+        <label for="user_name">Your username: </label><input type="text" name="user_name" placeholder="Your name" autocomplete="off">
+        <br>
+        <label>Your profile picture: </label>
+        <select name="user_picture">
+            {%  for item in pictures  %}
+            <option value="{{  item[0]  }}">{{  item[1]  }}</option>
+            {%  endfor  %}
+          </select>
+          <br>
+          <label for="agent_number">What agent number would you like?: </label>
+        <select name="agent_number">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>            
+        </select>
+        <br>
+        <label for="user_rank">Your rank: </label>
+        <select name="user_rank">
+            <option value="Iron_3.png">Iron</option>
+            <option value="Silver_3.png">Silver</option>
+            <option value="Gold_3.png">Gold</option>
+            <option value="Platinum_3.png">Platinum</option>
+            <option value="Diamond_3.png">Diamond</option>
+            <option value="Immortal_3.png">Immortal</option>
+            <option value="Radiant.png">Radiant</option>
+        </select>
+        <br>
+        <input type="submit" value="I play Valorant (Submit)">
+        </form>
+</body>
